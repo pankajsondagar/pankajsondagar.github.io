@@ -1,567 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pankaj Sondagar | Senior Web Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #10b981;
-            --dark: #1e293b;
-            --light: #f8fafc;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            scroll-behavior: smooth;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-        
-        .header {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #f9fafb 0%, #f0f4f8 100%);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .profile-img {
-            border: 10px solid white;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-        }
-        
-        .profile-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-badge {
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-badge:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 2.5rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: rgba(37, 99, 235, 0.2);
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: -8px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 3px solid white;
-        }
-        
-        .project-card img {
-            transition: transform 0.5s ease;
-        }
-        
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-        }
-        
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
-        footer {
-            background: var(--dark);
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-        }
-        
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--primary);
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header fixed top-0 w-full z-50">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-primary">Pankaj Sondagar</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link text-gray-700 hover:text-primary">Home</a>
-                <a href="#skills" class="nav-link text-gray-700 hover:text-primary">Skills</a>
-                <a href="#experience" class="nav-link text-gray-700 hover:text-primary">Experience</a>
-                <a href="#projects" class="nav-link text-gray-700 hover:text-primary">Projects</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-primary">Contact</a>
-            </div>
-            <button class="md:hidden text-gray-700">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </nav>
-    </header>
+  <head>
+    <title>Tricity  Insurance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    Senior Web Developer
-                </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-lg">
-                    Crafting elegant, scalable web solutions with 7+ years of expertise in modern web technologies.
-                    Passionate about building performant applications with clean, maintainable code.
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body style="background-image: url('images/bg.jpg');">
+  
+  <div class="site-wrap">
+
+    
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> <!-- .site-mobile-menu -->
+    
+    
+    <div class="site-navbar-wrap js-site-navbar bg-white">
+      
+      <div class="container">
+        <div class="site-navbar bg-light">
+          <div class="row align-items-center">
+<div class="col-2">
+  <a href="index.html" class="d-block">
+    <img src="./images/logo.png" alt=" Logo" class="img-fluid" style="max-height: 100px;">
+  </a>
+</div>
+            <div class="col-10">
+              <nav class="site-navigation text-right" role="navigation">
+                <div class="container">
+                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="has-children">
+                      <a href="insurance.html">Insurance</a>
+                      <ul class="dropdown arrow-top">
+                        <li><a href="#">Home Insurance</a></li>
+                        <li><a href="#">Auto Insurance</a></li>
+                        <li><a href="#">Travel Insurance</a></li>
+                        <li class="has-children">
+                          <a href="#">Sub Menus</a>
+                          <ul class="dropdown">
+                            <li><a href="insurance.html">Home Insurance</a></li>
+                            <li><a href="insurance.html">Auto Insurance</a></li>
+                            <li><a href="insurance.html">Travel Insurance</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html"><span class="d-inline-block p-2 bg-primary text-white btn btn-primary">Get A Quote</span></a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+<div class="slide-one-item home-slider owl-carousel">
+
+  <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6" data-aos="fade">
+          <h1 class="font-secondary font-weight-bold text-uppercase">Empowering Small Businesses With Confidence</h1>
+          <span class="caption d-block text-white">Protecting What Matters Most to You</span>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-7 text-center" data-aos="fade">
+          <h1 class="font-secondary font-weight-bold text-uppercase">Comprehensive Coverage, Trusted Support</h1>
+          <span class="caption d-block text-white">Insurance Solutions That Grow With You</span>
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+        <div class="container">
+            <div class="row">
+<section class="col-sm-7 col-md-8 col-lg-8">
+    <div class="intro">
+      <ul>
+                <h2>Welcome to Tricity Insurance</h2>
+        <p>At Tricity Insurance, we are committed to providing reliable, affordable, and comprehensive insurance solutions. Whether it's for your health, home, or vehicle, our mission is to ensure peace of mind with tailored coverage and dedicated customer support.</p>
+        
+      </ul>
+<ul class="row ">
+            <div class="col-sm-4 ">
+                <i class="fa fa-headset  " aria-hidden="true"></i>
+                <h3>24/7 Support</h3>
+                <p>Our dedicated support team is always available to assist you, anytime, anywhere.</p>
+            </div>
+            <div class="col-sm-4 ">
+                <i class="fa fa-file-invoice-dollar " aria-hidden="true"></i>
+                <h3>Hassle-Free Claims</h3>
+                <p>Experience a quick and transparent claim process with minimal paperwork.</p>
+            </div>
+            <div class="col-sm-4 ">
+                <i class="fa fa-shield-alt " aria-hidden="true"></i>
+                <h3>Secure Coverage</h3>
+                <p>Get started today with insurance plans that prioritize your safety and future.</p>
+            </div>
+        </ul>
+    </div>
+</section>
+
+                <section class="col-sm-5 col-md-4 col-lg-4">
+                    <div class="get-quote-form">
+                        <h2>Get a free quote form</h2>
+                        <form id="get-quote">
+                            <div>
+                                <input type="text" name="name" placeholder="Your Name" />
+                            </div>
+                            <div>
+                                <input type="text" name="email" placeholder="Email" />
+                            </div>
+                            <div>
+                                <input type="text" name="ph-no" placeholder="Phone no" />
+                            </div>
+                            
+                            <div>
+                                <textarea rows="1" cols="1" placeholder="Message"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" class="btn-default" value="Get Free Quote" />
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+<section class="row align-items-center my-5">
+  <!-- Left Image -->
+  <div class="col-md-6">
+    <img src="./images/7544.jpg" alt="Insurance Services" class="img-fluid rounded ">
+  </div>
+
+  <!-- Right Content -->
+  <div class="col-md-6">
+  <h2 class="site-section-heading text-uppercase font-secondary mb-5">Why Choose Us</h2>
+  <p>At  Tricity Insurance, we prioritize your peace of mind. With personalized insurance plans, expert advisors, and responsive customer support, we’re committed to securing your health, assets, and future with trust and transparency.</p>
+
+  <p>Whether you need life, health, auto, or home insurance, our experienced team ensures a smooth and reliable experience—because protecting what matters to you is what matters most to us.</p>
+</section>
+
+
+            </div>
+        </div>
+    <!-- <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="caption d-block mb-2 font-secondary font-weight-bold">Products &amp; Services</span>
+            <h2 class="site-section-heading text-uppercase text-center font-secondary">Insurance Coverage</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 block-13 nav-direction-white">
+            <div class="nonloop-block-13 owl-carousel">
+              <div class="media-image">
+                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Home Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+              <div class="media-image">
+                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Auto Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+              <div class="media-image">
+                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Travel Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+              <div class="media-image">
+                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Home Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+              <div class="media-image">
+                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Auto Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+              <div class="media-image">
+                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2 class="font-secondary text-uppercase">Travel Insurance</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
+                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    
+    <!-- <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12"><h2 class="text-uppercase">We Are Trusted Agency Company</h2></div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <img src="images/about_1.jpg" alt="image" class="img-fluid">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ml-auto">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid eius facilis voluptatem eligendi magnam accusamus vel commodi asperiores sint rem reprehenderit nobis nesciunt veniam qui fugit doloremque numquam quod.</p>
+          </div>
+          <div class="col-md-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora distinctio ipsam nesciunt recusandae repellendus asperiores amet.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+  
+
+    
+
+<div class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12 text-center">
+        <span class="caption d-block mb-2 font-secondary font-weight-bold">Outstanding Services</span>
+        <h2 class="site-section-heading text-uppercase text-center font-secondary">Why Clients Choose Us</h2>
+      </div>
+    </div>
+    <div class="row border-responsive">
+      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
+        <div class="text-center">
+          <span class="flaticon-customer-service display-4 d-block mb-3 text-primary"></span>
+          <h3 class="text-uppercase h4 mb-3">24/7 Support</h3>
+          <p>Our dedicated support team is available around the clock to assist you whenever you need help or guidance with your policy or claims.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
+        <div class="text-center">
+          <span class="flaticon-group display-4 d-block mb-3 text-primary"></span>
+          <h3 class="text-uppercase h4 mb-3">Trusted Advisors</h3>
+          <p>Our experienced professionals offer honest advice and personalized solutions, earning the trust of thousands of satisfied clients.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
+        <div class="text-center">
+          <span class="flaticon-medal display-4 d-block mb-3 text-primary"></span>
+          <h3 class="text-uppercase h4 mb-3">12+ Years of Expertise</h3>
+          <p>We’ve been protecting lives and assets for over a decade with tailored insurance plans backed by proven industry knowledge.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+        <div class="text-center">
+          <span class="flaticon-agreement display-4 d-block mb-3 text-primary"></span>
+          <h3 class="text-uppercase h4 mb-3">Join Our Community</h3>
+          <p>Become part of a growing family that values security, reliability, and peace of mind. Let us protect what matters most to you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="mb-5"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></p>
+          </div>
+         <div class="col-lg-5 ml-auto">
+  <h2 class="site-section-heading mb-3 font-secondary text-uppercase">
+    Protect Your Home Before It's Too Late
+  </h2>
+  <p class="mb-5">
+    Every year, thousands of homes suffer damage from unexpected disasters—leaving families unprepared and financially strained. Safeguard your future with comprehensive home insurance designed to protect what matters most.
+  </p>
+  <p>
+    <a href="#" class="btn btn-outline-primary py-2 px-4">Get Insured Today</a>
+  </p>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="" style="background-image: url('images/topography.png'); background-attachment: fixed">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <h2 class="site-section-heading text-center text-uppercase">Our Founders</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+            <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+            <h2 class="h5 ">Alex Peters</h2>
+            <span class="d-block mb-4">CEO, Co-Founder</span>
+            <p class="font-weig mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita et aliquam fuga dicta amet ad laborum error recusandae, voluptatibus quam minima sed, saepe odio voluptatem. Sed unde hic, vitae fugiat.</p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
+            <h2 class="h5">Shane Cripton</h2>
+            <span class="d-block mb-4">President, Co-Founder</span> 
+            <p class="font-weig mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita et aliquam fuga dicta amet ad laborum error recusandae, voluptatibus quam minima sed, saepe odio voluptatem. Sed unde hic, vitae fugiat.</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+    
+    
+
+    <div class=" p-4 block-14 bg-light nav-direction-white">
+    <!-- Testimonial Start -->
+<div class="testimonial-section  bg-light">
+  <div class="container ">
+          <div class="col-md-12">
+            <h2 class="site-section-heading text-center text-uppercase mb-4">Tesimonials</h2>
+          </div>
+    
+    <div class="testimonial-cards ">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Testimonial Card 1 -->
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-4">
+                <img src="images/testimonial-1.jpg" class="rounded-circle me-3" width="60" alt="Client">
+                <div class="ml-3">
+                  <h5 class="mb-0">Sarah Johnson</h5>
+                  <small class="text-muted">Homeowner</small>
+                </div>
+              </div>
+              <div class="rating mb-3 text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="card-text">"After the storm damage last year, their team handled everything seamlessly. The claim process was straightforward and they were with me every step of the way."</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Posted 2 weeks ago</small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Card 2 -->
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-4">
+                <img src="images/testimonial-2.jpg" class="rounded-circle me-3" width="60" alt="Client">
+                <div class="ml-3">
+                  <h5 class="mb-0">Michael Chen</h5>
+                  <small class="text-muted">Business Owner</small>
+                </div>
+              </div>
+              <div class="rating mb-3 text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="card-text">"The commercial policy they designed for my restaurant saved me thousands while providing better coverage than my previous insurer. Highly recommend for small businesses."</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Posted 1 month ago</small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial Card 3 -->
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-4">
+                <img src="images/testimonial-3.jpg" class="rounded-circle me-3" width="60" alt="Client">
+                <div class="ml-3">
+                  <h5 class="mb-0">David & Emily Wilson</h5>
+                  <small class="text-muted">Family Plan</small>
+                </div>
+              </div>
+              <div class="rating mb-3 text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="card-text">"Bundling our auto and home insurance was the best financial decision we made this year. The savings were substantial and the service has been exceptional."</p>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+              <small class="text-muted">Posted 3 months ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <div class="trust-badges mt-4">
+        <span class="badge bg-white text-dark me-2 p-2 shadow-sm">
+          <i class="fas fa-shield-alt text-primary me-1"></i> Trusted by 10,000+ clients
+        </span>
+        <span class="badge bg-white text-dark p-2 shadow-sm">
+          <i class="fas fa-award text-primary me-1"></i> 5-Star Rated Service
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- Testimonial End -->
+    </div>
+
+    <div class="py-5 bg-primary">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+            <h2 class="text-uppercase text-white mb-0">Small Business Insurance Company</h2>
+          </div>
+          <div class="col-md-3 ml-auto text-center text-md-left">
+            <a href="#" class="btn btn-bg-primary d-inline-block d-md-block font-secondary text-uppercase">Contact Us</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="footer-heading mb-4 text-white">About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
+            <p><a href="#" class="btn btn-primary rounded text-white px-4">Read More</a></p>
+          </div>
+          <div class="col-md-5 ml-auto">
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Insurance</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Privacy</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-6">
+                <h3 class="footer-heading mb-4 text-white">Insurance</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="#">Home Insurance</a></li>
+                    <li><a href="#">Auto Insurance</a></li>
+                    <li><a href="#">Travel Insurance</a></li>
+                    <li><a href="#">Business Insurance</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="col-md-2">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#contact" class="btn-primary text-white px-8 py-3 rounded-lg font-medium">Get In Touch</a>
-                    <a href="#projects" class="btn-outline px-8 py-3 rounded-lg font-medium">View Work</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEFqnA1LBc5pg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723696332227?e=1749081600&v=beta&t=uxLw3YPycNEbAgcqRSOnJmInl1gPpuq8XK7zXwmELVg" 
-                     alt="Pankaj Sondagar" 
-                     class="profile-img rounded-full w-80 h-80 object-fill mx-auto">
-            </div>
+              </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-16">Technical Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="card p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-server text-primary text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Backend Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">PHP</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Laravel</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Symfony</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Express</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">NestJS</span>
-                    </div>
-                </div>
-                
-                <div class="card p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-laptop-code text-primary text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Frontend Development</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">TypeScript</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">React</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Vue.js</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">SASS</span>
-                    </div>
-                </div>
-                
-                <div class="card p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                            <i class="fas fa-database text-primary text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold">Database & DevOps</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">MySQL</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">PostgreSQL</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">Docker</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">AWS</span>
-                        <span class="skill-badge px-4 py-2 rounded-full text-sm font-medium">CI/CD</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-16">Professional Experience</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <div class="timeline-item mb-12">
-                    <div class="timeline-dot"></div>
-                    <div class="card p-8">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-semibold">Senior Web Developer</h3>
-                            <span class="text-primary font-medium">May 2023 - Present</span>
-                        </div>
-                        <p class="text-gray-600 font-medium mb-4">KrishaWeb</p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li>Led development of scalable web applications using Laravel and Vue.js</li>
-                            <li>Optimized database performance resulting in 40% faster query execution</li>
-                            <li>Implemented RESTful APIs and integrated third-party services</li>
-                            <li>Mentored junior developers and enforced coding best practices</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item mb-12">
-                    <div class="timeline-dot"></div>
-                    <div class="card p-8">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-semibold">Sr. Software Engineer</h3>
-                            <span class="text-primary font-medium">Oct 2020 - Apr 2023</span>
-                        </div>
-                        <p class="text-gray-600 font-medium mb-4">Crenspire Technologies</p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li>Architected and developed enterprise-level web applications</li>
-                            <li>Implemented microservices architecture for improved scalability</li>
-                            <li>Integrated payment gateways and third-party APIs</li>
-                            <li>Conducted code reviews and technical interviews</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item mb-12">
-                    <div class="timeline-dot"></div>
-                    <div class="card p-8">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-semibold">Software Engineer</h3>
-                            <span class="text-primary font-medium">Apr 2019 - Oct 2020</span>
-                        </div>
-                        <p class="text-gray-600 font-medium mb-4">WebClues Infotech</p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li>Developed custom CMS solutions using PHP and Symfony</li>
-                            <li>Built responsive frontends with React and Tailwind CSS</li>
-                            <li>Managed cloud deployments on AWS and DigitalOcean</li>
-                            <li>Collaborated in Agile teams to deliver projects on tight deadlines</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="card p-8">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                            <h3 class="text-xl font-semibold">PHP Developer</h3>
-                            <span class="text-primary font-medium">Nov 2017 - Apr 2019</span>
-                        </div>
-                        <p class="text-gray-600 font-medium mb-4">Teknomines Pvt Ltd</p>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                            <li>Assisted in building e-commerce platforms with PHP and MySQL</li>
-                            <li>Performed bug fixes and code optimizations</li>
-                            <li>Contributed to API development and documentation</li>
-                            <li>Learned modern frameworks like Laravel and Node.js</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-16">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card card group">
-                    <div class="overflow-hidden">
-                        <img src="./img/swagify.png" 
-                             alt="Swagify" 
-                             class="w-full h-48 object-fit group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Swagify</h3>
-                        <p class="text-gray-600 text-sm mb-4">Laravel-based CRM with real-time analytics and reporting</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Laravel</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MySQL</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Case Study <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card card group">
-                    <div class="overflow-hidden">
-                        <img src="./img/mymeet.png" 
-                             alt="MyMeet" 
-                             class="w-full h-48 object-fit group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">MyMeet</h3>
-                        <p class="text-gray-600 text-sm mb-4">High-performance RESTful API for meeting scheduling platform</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Symfony</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Redis</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Case Study <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card card group">
-                    <div class="overflow-hidden">
-                        <img src="./img/zilra.png" 
-                             alt="Zilra" 
-                             class="w-full h-48 object-fit group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Zilra</h3>
-                        <p class="text-gray-600 text-sm mb-4">Custom content management system for enterprise clients</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">PHP</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
-                        </div>
-                        <a href="#" class="text-primary font-medium hover:underline flex items-center">
-                            View Case Study <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-16">Get In Touch</h2>
-            
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6">Let's work together</h3>
-                    <p class="text-gray-600 mb-8">
-                        I'm currently available for freelance work or full-time positions. If you have a project that 
-                        needs creative solutions or technical expertise, I'd love to hear about it.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-envelope text-primary"></i>
-                            </div>
-                            <a href="mailto:pankaj@example.com" class="text-gray-700 hover:text-primary">pankaj@example.com</a>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-phone text-primary"></i>
-                            </div>
-                            <a href="tel:+919876543210" class="text-gray-700 hover:text-primary">+91 98765 43210</a>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <span class="text-gray-700">Ahmedabad, India</span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex space-x-4 mt-8">
-                        <a href="#" class="social-icon bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-primary">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-icon bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-primary">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-icon bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-primary">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon bg-white p-3 rounded-full shadow-md text-gray-700 hover:text-primary">
-                            <i class="fab fa-stack-overflow"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                        </div>
-                        
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-primary w-full text-white px-6 py-3 rounded-lg font-medium">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 text-white">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-6">Pankaj Sondagar</h2>
-            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Senior Web Developer specializing in building exceptional digital experiences with modern web technologies.
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved </a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="social-icon text-gray-300 hover:text-white text-xl">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" class="social-icon text-gray-300 hover:text-white text-xl">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="social-icon text-gray-300 hover:text-white text-xl">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon text-gray-300 hover:text-white text-xl">
-                    <i class="fab fa-stack-overflow"></i>
-                </a>
-            </div>
-            <p class="text-gray-400 text-sm">
-                © 2025 Pankaj Sondagar. All rights reserved.
-            </p>
+          </div>
+          
         </div>
+      </div>
     </footer>
+  </div>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Mobile menu toggle would go here
-    </script>
-</body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+  </body>
 </html>
