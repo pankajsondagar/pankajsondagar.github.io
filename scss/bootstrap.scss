@@ -1,0 +1,21 @@
+// Import Raleway font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+// Define font variables
+$font-family-base: 'Raleway', sans-serif;
+$headings-font-family: 'Raleway', sans-serif;
+
+// Other existing configurations
+$body-color: $secondary;
+$headings-color: $dark;
+$headings-font-weight: 600;
+$display-font-weight: 400;
+$enable-responsive-font-sizes: true;
+$border-radius: 8px;
+$border-radius-sm: $border-radius;
+$border-radius-lg: $border-radius;
+$link-decoration: none;
+$enable-negative-margins: true;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";

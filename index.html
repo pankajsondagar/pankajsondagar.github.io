@@ -1,570 +1,1050 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Tricity  Insurance</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-    
-    
-    
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/style.css">
-    
-  </head>
-  <body style="background-image: url('images/bg.jpg');">
-  
-  <div class="site-wrap">
-
-    
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
+   <head>
+      <meta charset="utf-8" />
+      <title>CaterServ - Catering Services Website Template</title>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+      <meta content name="keywords" />
+      <meta content name="description" />
+      <!-- Google Web Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+         rel="stylesheet"
+         />
+      <!-- Icon Font Stylesheet -->
+      <link
+         rel="stylesheet"
+         href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+         />
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+         rel="stylesheet"
+         />
+      <!-- Libraries Stylesheet -->
+      <link href="lib/animate/animate.min.css" rel="stylesheet" />
+      <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+      <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet" />
+      <!-- Customized Bootstrap Stylesheet -->
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <!-- Template Stylesheet -->
+      <link href="css/style.css" rel="stylesheet" />
+   </head>
+   <body>
+      <!-- Spinner Start -->
+      <div
+         id="spinner"
+         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"
+         >
+         <div class="spinner-grow text-primary" role="status"></div>
       </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> <!-- .site-mobile-menu -->
-    
-    
-    <div class="site-navbar-wrap js-site-navbar bg-white">
-      
-      <div class="container">
-        <div class="site-navbar bg-light">
-          <div class="row align-items-center">
-<div class="col-2">
-  <a href="index.html" class="d-block">
-    <img src="./images/logo.png" alt=" Logo" class="img-fluid" style="max-height: 100px;">
-  </a>
-</div>
-            <div class="col-10">
-              <nav class="site-navigation text-right" role="navigation">
-                <div class="container">
-                  <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-                  <ul class="site-menu js-clone-nav d-none d-lg-block">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li class="has-children">
-                      <a href="insurance.html">Insurance</a>
-                      <ul class="dropdown arrow-top">
-                        <li><a href="#">Home Insurance</a></li>
-                        <li><a href="#">Auto Insurance</a></li>
-                        <li><a href="#">Travel Insurance</a></li>
-                        <li class="has-children">
-                          <a href="#">Sub Menus</a>
-                          <ul class="dropdown">
-                            <li><a href="insurance.html">Home Insurance</a></li>
-                            <li><a href="insurance.html">Auto Insurance</a></li>
-                            <li><a href="insurance.html">Travel Insurance</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="contact.html"><span class="d-inline-block p-2 bg-primary text-white btn btn-primary">Get A Quote</span></a></li>
+      <!-- Spinner End -->
+      <!-- Navbar start -->
+      <div class="container-fluid nav-bar" style="background-color: #fff">
+         <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg py-2">
+               <a href="index.html" class="navbar-brand">
+               <img src="img/logo.png" alt="Tricity Insurance Logo" style="height: 70px; width: auto; margin-right: 10px;">
+               </a>
+               <button
+                  class="navbar-toggler py-2 px-3"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarCollapse"
+                  >
+               <span class="fa fa-bars text-primary"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <div class="navbar-nav mx-auto">
+                     <a href="index.html" class="nav-item nav-link active">Home</a>
+                     <a href="about.html" class="nav-item nav-link">About</a>
+                     <a href="service.html" class="nav-item nav-link">Services</a>
+                     <a href="event.html" class="nav-item nav-link">Events</a>
+                     <div class="nav-item dropdown">
+                        <a
+                           href="#"
+                           class="nav-link dropdown-toggle"
+                           data-bs-toggle="dropdown"
+                           >Pages</a
+                           >
+                        <div class="dropdown-menu bg-white">
+                           <a href="book.html" class="dropdown-item">Booking</a>
+                           <a href="blog.html" class="dropdown-item">Our Blog</a>
+                           <a href="team.html" class="dropdown-item">Our Team</a>
+                           <a href="testimonial.html" class="dropdown-item"
+                              >Testimonial</a
+                              >
+                           <a href="404.html" class="dropdown-item">404 Page</a>
+                        </div>
+                     </div>
+                     <a href="contact.html" class="nav-item nav-link">Contact</a>
+                  </div>
+                  <button
+                     class="btn-search btn text-white btn-md-square me-4 rounded-circle d-none d-lg-inline-flex"
+                     style="background-color: #897fdd; outline: none; box-shadow: none"
+                     data-bs-toggle="modal"
+                     data-bs-target="#searchModal"
+                     >
+                  <i class="fas fa-search"></i>
+                  </button>
+                  <a
+                     href
+                     class="btn text-white py-2 px-4 d-none d-xl-inline-block rounded-pill"
+                     style="background-color: #897fdd; outline: none; box-shadow: none"
+                     >Book Now</a
+                     >
+               </div>
+            </nav>
+         </div>
+      </div>
+      <!-- Navbar End -->
+      <!-- Modal Search Start -->
+      <div
+         class="modal fade"
+         id="searchModal"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true"
+         >
+         <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                     Search by keyword
+                  </h5>
+                  <button
+                     type="button"
+                     class="btn-close"
+                     style="outline: none; box-shadow: none"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                     ></button>
+               </div>
+               <div class="modal-body d-flex align-items-center">
+                  <div class="input-group w-75 mx-auto d-flex">
+                     <input
+                        type="search"
+                        class="form-control bg-transparent p-3"
+                        style="
+                        outline: none;
+                        box-shadow: none;
+                        border: 1px solid #897fdd;
+                        "
+                        placeholder="keywords"
+                        aria-describedby="search-icon-1"
+                        />
+                     <span id="search-icon-1" class="input-group-text p-3"
+                        ><i class="fa fa-search"></i
+                        ></span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Modal Search End -->
+      <!-- Hero Start -->
+      <div class="container-fluid py-6 my-2 mt-0">
+         <div class="container">
+            <div class="row g-5 align-items-center">
+               <div class="col-lg-6 col-md-12">
+                  <small
+                     class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill py-2 px-4 py-1 mb-4 "
+                     style="
+                     border: 1px solid #897fdd;
+                     background-color: rgba(137, 127, 221, 0.1);
+                     "
+                     >
+                  Welcome to Tricity Insurance
+                  </small>
+                  <h3 class="display-4 py-3 mb-4 ">
+                     Your <span style="color: #897fdd">Financial</span> Status Is Our
+                     Goal
+                  </h3>
+                  <ul class="d-flex flex-wrap gap-3 py-3 list-unstyled">
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/Home.svg"
+                              alt="Home & Auto"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Home </span>
+                     </li>
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/Car.svg"
+                              alt="Auto"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Auto</span>
+                     </li>
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/Plane.svg"
+                              alt="Travel"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Travel</span>
+                     </li>
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/MotorCycle.svg"
+                              alt="Motorcycle"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Motorcycle</span>
+                     </li>
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/Business.svg"
+                              alt="Business"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Business</span>
+                     </li>
+                     <li class="d-flex flex-column align-items-center">
+                        <div class="icon-circle">
+                           <img
+                              src="img/Family.svg"
+                              alt="Life"
+                              class="img-fluid"
+                              style="width: 35px; height: 35px"
+                              />
+                        </div>
+                        <span class="icon-text">Life</span>
+                     </li>
                   </ul>
-                </div>
-              </nav>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <img
+                     id="changingImage"
+                     src="img/Man Representing Auto Insurance Coverage Illustration with Car and Policy-HD (1).webp"
+                     class="img-fluid rounded fade-img"
+                     style="width: 800px; height: auto"
+                     alt=""
+                     />
+               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div>
-  
-<div class="slide-one-item home-slider owl-carousel">
-
-  <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade">
-          <h1 class="font-secondary font-weight-bold text-uppercase">Empowering Small Businesses With Confidence</h1>
-          <span class="caption d-block text-white">Protecting What Matters Most to You</span>
-        </div>
+      <!-- Hero End -->
+      <!-- About Satrt -->
+      <div class="">
+         <div class="container">
+            <div class="row g-5 align-items-center">
+               <div class="col-lg-6 " data-wow-delay="0.1s">
+                  <img
+                     src="img/AboutUs.jpg"
+                     class="img-fluid rounded"
+                     style="width: 900px; height: auto"
+                     alt="Insurance Services"
+                     />
+               </div>
+               <div class="col-lg-6 " data-wow-delay="0.3s">
+                  <small
+                     class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill px-4 py-1 mb-4 "
+                     style="
+                     border: 1px solid #897fdd;
+                     background-color: rgba(137, 127, 221, 0.1);
+                     "
+                     >About Us</small
+                     >
+                  <h3 class="display-6  mb-3 " style=" font-size: 35px;">
+                     Trusted By <span style="color: #897fdd;">500+ </span> Happy Clients
+                  </h3>
+                  <p class="about-text animate-slide-in" >
+                     We provide trusted insurance solutions to protect what matters most-giving you and your loved ones peace of mind.            
+                  </p>
+                  <div class="row  animate-slide-in">
+                     <div class="col-sm-6">
+                        <div class="feature-card">
+                           <i class="fas fa-shield-alt"></i>
+                           Comprehensive Coverage 
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="feature-card">
+                           <i class="fas fa-headset"></i>
+                           24/7 Claims Support
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="feature-card">
+                           <i class="fas fa-cog"></i>
+                           Custom Options 
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="feature-card">
+                           <i class="fas fa-hand-holding-usd"></i>
+                           Affordable Premiums
+                        </div>
+                     </div>
+                  </div>
+                  <a href="#" class="btn btn-custom animate-slide-in"
+                     >Learn More <i class="fas fa-arrow-right"></i
+                     ></a>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>  
-
-  <div class="site-blocks-cover inner-page overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7 text-center" data-aos="fade">
-          <h1 class="font-secondary font-weight-bold text-uppercase">Comprehensive Coverage, Trusted Support</h1>
-          <span class="caption d-block text-white">Insurance Solutions That Grow With You</span>
-        </div>
+      <!-- About End -->
+      <!-- trusted Start-->
+      <div class="py-5">
+         <section class="trusted-section">
+            <div class="container">
+               <div class="row">
+                  <!-- Left Side: Trusted by 100+ Companies Text -->
+                  <div class="col-md-6 trusted-text">
+                     <div>
+                        <h3 class="display-6  mb-3 " style=" font-size: 35px;">
+                           Trusted By <span style="color: #897fdd;">100+ </span> Companies
+                        </h3>
+                        <p>
+                           We are proud to be recognized by leading organizations
+                           worldwide for our innovative solutions and services.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- Right Side: Scrolling Company Logos -->
+                  <div class="col-md-6">
+                     <div class="logo-container">
+                        <div class="logo-scroll">
+                           <img
+                              src="https://logo.clearbit.com/apple.com"
+                              alt="Apple Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/microsoft.com"
+                              alt="Microsoft Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/google.com"
+                              alt="Google Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/amazon.com"
+                              alt="Amazon Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/facebook.com"
+                              alt="Facebook Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/tesla.com"
+                              alt="Tesla Logo"
+                              />
+                           <img src="https://logo.clearbit.com/ibm.com" alt="IBM Logo" />
+                           <img
+                              src="https://logo.clearbit.com/samsung.com"
+                              alt="Samsung Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/cisco.com"
+                              alt="Cisco Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/oracle.com"
+                              alt="Oracle Logo"
+                              />
+                           <!-- Duplicate logos to create seamless scroll -->
+                           <img
+                              src="https://logo.clearbit.com/apple.com"
+                              alt="Apple Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/microsoft.com"
+                              alt="Microsoft Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/google.com"
+                              alt="Google Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/amazon.com"
+                              alt="Amazon Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/facebook.com"
+                              alt="Facebook Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/tesla.com"
+                              alt="Tesla Logo"
+                              />
+                           <img src="https://logo.clearbit.com/ibm.com" alt="IBM Logo" />
+                           <img
+                              src="https://logo.clearbit.com/samsung.com"
+                              alt="Samsung Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/cisco.com"
+                              alt="Cisco Logo"
+                              />
+                           <img
+                              src="https://logo.clearbit.com/oracle.com"
+                              alt="Oracle Logo"
+                              />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
       </div>
-    </div>
-  </div> 
-</div>
-
-        <div class="container">
+      <!-- trusted End-->
+      <!-- why choose us section start-->
+      <!-- <div class="why-choose-us">
+         <div class="land">
+           <div class="content ontainer">
+             <span class="mt-3"><img src="./img/WhyChooseUs.png" /></span>
+             <span>
+               <h1>Why choose us?</h1>
+               <p>
+                 Digidiga selalu menganggap client sebagai teman yang akan kami
+                 bantu untuk menyelesaikan masalahnya, kami akan bantu Anda karena
+                 kami mempunyai kelebihan seperti dibawah ini.
+               </p>
+             </span>
+           </div>
+         </div>
+         </div> -->
+      <!-- why choose us section end-->
+      <!-- Service Start -->
+      <div class="container-fluid service py-2">
+         <div class="container">
+            <div class="text-center " data-wow-delay="0.1s">
+               <small
+                  class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill px-4 py-1 mb-4 "
+                  style="
+                  border: 1px solid #897fdd;
+                  background-color: rgba(137, 127, 221, 0.1);
+                  "
+                  >
+               Our Insurance Services
+               </small>
+               <h3 class="display-6  mb-5  " style=" font-size: 35px;">
+                  Tailored <span style="color: #897fdd;">Business </span> Solutions
+               </h3>
+            </div>
+            <div class="row g-4">
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.1s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i class="fas fa-home fa-4x mb-2" style="color: #897fdd"></i>
+                           <h5 class="mb-2">Home Insurance</h5>
+                           <p class="mb-0 small">
+                              Protect your home and belongings with our comprehensive
+                              homeowners insurance.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.3s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i class="fas fa-car fa-4x mb-2" style="color: #897fdd"></i>
+                           <h5 class="mb-2">Auto Insurance</h5>
+                           <p class="mb-0 small">
+                              Customizable auto coverage that protects you and your
+                              vehicle.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.5s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i
+                              class="fas fa-heartbeat fa-4x mb-2"
+                              style="color: #897fdd"
+                              ></i>
+                           <h5 class="mb-2">Health Insurance</h5>
+                           <p class="mb-0 small">
+                              Affordable healthcare plans for your family's needs.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.7s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i
+                              class="fas fa-user-tie fa-4x mb-2"
+                              style="color: #897fdd"
+                              ></i>
+                           <h5 class="mb-2">Life Insurance</h5>
+                           <p class="mb-0 small">
+                              Secure your family's financial future.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.1s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i
+                              class="fas fa-briefcase fa-4x mb-2"
+                              style="color: #897fdd"
+                              ></i>
+                           <h5 class="mb-2">Business Insurance</h5>
+                           <p class="mb-0 small">
+                              Protection for business assets and liabilities.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.3s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i class="fas fa-plane fa-4x mb-2" style="color: #897fdd"></i>
+                           <h5 class="mb-2">Travel Insurance</h5>
+                           <p class="mb-0 small">Peace of mind for your travels.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.5s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i class="fas fa-paw fa-4x mb-2" style="color: #897fdd"></i>
+                           <h5 class="mb-2">Pet Insurance</h5>
+                           <p class="mb-0 small">Healthcare for your furry family.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div
+                  class="col-lg-3 col-md-4 col-sm-6 "
+                  data-wow-delay="0.7s"
+                  >
+                  <div
+                     class="bg-white border rounded service-item h-100 d-flex flex-column"
+                     >
+                     <div
+                        class="service-content p-3 text-center flex-grow-1 d-flex flex-column"
+                        >
+                        <div class="service-content-icon">
+                           <i
+                              class="fas fa-shield-alt fa-4x mb-2"
+                              style="color: #897fdd"
+                              ></i>
+                           <h5 class="mb-2">Liability Insurance</h5>
+                           <p class="mb-0 small">
+                              Protection against injury or property damage claims.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Service End -->
+      <!-- Blogs Start -->
+      <div class="p-4 mt-5" style="background-color: #f8fafc">
+         <div class="container py-2">
+            <div class="text-center " data-wow-delay="0.1s">
+               <small
+                  class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill px-4 py-1 mb-4 "
+                  style="
+                  border: 1px solid #897fdd;
+                  background-color: rgba(137, 127, 221, 0.1);
+                  "
+                  >Our Latest Blogs</small
+                  >
+               <h3 class="display-6  mb-5  " style=" font-size: 35px;">
+                  Insights on Insurance : <span style="color: #897fdd;"> Trends & Updates</span> 
+               </h3>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+               <!-- Card 1 -->
+               <div class="col">
+                  <div class="card h-100 bounceInUp" data-wow-delay="0.1s">
+                     <div class="position-relative">
+                        <img
+                           src="https://storage.googleapis.com/a1aa/image/01461f10-e198-4448-e735-f593894bb7a6.jpg"
+                           class="card-img-top"
+                           alt="Woman reviewing home insurance documents at desk"
+                           style="height: 224px; object-fit: cover"
+                           />
+                        <span
+                           class="position-absolute bottom-0 end-0 text-white text-xs fw-semibold px-3 py-1 m-3 rounded"
+                           style="background-color: #897fdd"
+                           >
+                        <i class="fas fa-folder me-1"></i>HOME INSURANCE
+                        </span>
+                     </div>
+                     <div class="card-body">
+                        <div class="d-flex text-muted small mb-2">
+                           <span class="me-3"
+                              ><i class="far fa-calendar-alt me-1"></i>May 10, 2025</span
+                              >
+                           <span><i class="far fa-comment me-1"></i>5 Comments</span>
+                        </div>
+                        <p class="fw-bold fs-6 text-dark mb-2">
+                           Top 8 Benefits of Home Insurance You Should Know
+                        </p>
+                        <p class="card-text text-muted small mb-4">
+                           Discover how home insurance protects your property and
+                           provides peace of mind. From natural disasters to theft, learn
+                           the key benefits that make it essential for homeowners.
+                        </p>
+                        <a
+                           href="#"
+                           class="text-dark fw-bold small text-decoration-none"
+                           >
+                        Read More <i class="fas fa-angle-double-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <!-- Card 2 -->
+               <div class="col">
+                  <div class="card h-100 " data-wow-delay="0.2s">
+                     <div class="position-relative">
+                        <img
+                           src="https://storage.googleapis.com/a1aa/image/d648648f-98b4-47d0-5894-916414ffb943.jpg"
+                           class="card-img-top"
+                           alt="Group discussing car insurance options"
+                           style="height: 224px; object-fit: cover"
+                           />
+                        <span
+                           class="position-absolute bottom-0 end-0 text-white text-xs fw-semibold px-3 py-1 m-3 rounded"
+                           style="background-color: #897fdd"
+                           >
+                        <i class="fas fa-folder me-1"></i>CAR INSURANCE
+                        </span>
+                     </div>
+                     <div class="card-body">
+                        <div class="d-flex text-muted small mb-2">
+                           <span class="me-3"
+                              ><i class="far fa-calendar-alt me-1"></i>May 8, 2025</span
+                              >
+                           <span><i class="far fa-comment me-1"></i>3 Comments</span>
+                        </div>
+                        <p class="fw-bold fs-6 text-dark mb-2">
+                           How to Choose the Best Car Insurance Plan
+                        </p>
+                        <p class="card-text text-muted small mb-4">
+                           Navigate the world of car insurance with confidence. Explore
+                           tips on selecting coverage that fits your needs, budget, and
+                           driving habits.
+                        </p>
+                        <a
+                           href="#"
+                           class="text-dark fw-bold small text-decoration-none"
+                           >
+                        Read More <i class="fas fa-angle-double-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <!-- Card 3 -->
+               <div class="col">
+                  <div class="card h-100 " data-wow-delay="0.3s">
+                     <div class="position-relative">
+                        <img
+                           src="https://storage.googleapis.com/a1aa/image/dad2a512-3e4f-42fe-5854-4aedc0a1bfbc.jpg"
+                           class="card-img-top"
+                           alt="Couple discussing health insurance with advisor"
+                           style="height: 224px; object-fit: cover"
+                           />
+                        <span
+                           class="position-absolute bottom-0 end-0 text-white text-xs fw-semibold px-3 py-1 m-3 rounded"
+                           style="background-color: #897fdd"
+                           >
+                        <i class="fas fa-folder me-1"></i>HEALTH INSURANCE
+                        </span>
+                     </div>
+                     <div class="card-body">
+                        <div class="d-flex text-muted small mb-2">
+                           <span class="me-3"
+                              ><i class="far fa-calendar-alt me-1"></i>May 5, 2025</span
+                              >
+                           <span><i class="far fa-comment me-1"></i>4 Comments</span>
+                        </div>
+                        <p class="fw-bold fs-6 text-dark mb-2">
+                           Why Health Insurance is a Must in 2025
+                        </p>
+                        <p class="card-text text-muted small mb-4">
+                           With rising healthcare costs, health insurance is more
+                           critical than ever. Learn why comprehensive coverage is
+                           essential for you and your family.
+                        </p>
+                        <a
+                           href="#"
+                           class="text-dark fw-bold small text-decoration-none"
+                           >
+                        Read More <i class="fas fa-angle-double-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- blogs End -->
+      <!-- Book Us Start -->
+      <!-- Book Us End -->
+      <!-- Team Start -->
+      <div class="container-fluid team py-6">
+         <div class="container">
+            <div class="text-center " data-wow-delay="0.1s">
+               <small
+                  class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill px-4 py-1 mb-4 "
+                  style="
+                  border: 1px solid #897fdd;
+                  background-color: rgba(137, 127, 221, 0.1);
+                  "
+                  >Meet Our Experts</small
+                  >
+               <h3 class="display-6  mb-5  " style=" font-size: 35px;">
+                  Our Experienced Insurance <span style="color: #897fdd;"> Professionals</span> 
+               </h3>
+            </div>
+            <div class="row g-4">
+               <div class="col-lg-3 col-md-6" data-wow-delay="0.1s">
+                  <div class="team-item rounded">
+                     <img class="img-fluid rounded-top" src="img/team-1.jpg" alt />
+                     <div class="team-content text-center py-3 bg-dark rounded-bottom">
+                        <h4                   style="color: #897fdd"                >Jane Doe</h4>
+                        <p class="text-white mb-0">Senior Insurance Advisor</p>
+                     </div>
+                     <div class="team-icon d-flex flex-column justify-content-center m-4">
+                        <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fas fa-share-alt"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-facebook-f"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-twitter"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-linkedin"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6" data-wow-delay="0.3s">
+                  <div class="team-item rounded">
+                     <img class="img-fluid rounded-top" src="img/team-2.jpg" alt />
+                     <div class="team-content text-center py-3 bg-dark rounded-bottom">
+                        <h4     style="color: #897fdd" >John Smith</h4>
+                        <p class="text-white mb-0">Claims Specialist</p>
+                     </div>
+                     <div class="team-icon d-flex flex-column justify-content-center m-4">
+                        <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fas fa-share-alt"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-facebook-f"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-twitter"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-linkedin"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6" data-wow-delay="0.5s">
+                  <div class="team-item rounded">
+                     <img class="img-fluid rounded-top" src="img/team-3.jpg" alt />
+                     <div class="team-content text-center py-3 bg-dark rounded-bottom">
+                        <h4    style="color: #897fdd" >Emily Brown</h4>
+                        <p class="text-white mb-0">Insurance Underwriter</p>
+                     </div>
+                     <div class="team-icon d-flex flex-column justify-content-center m-4">
+                        <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fas fa-share-alt"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-facebook-f"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-twitter"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-linkedin"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6" data-wow-delay="0.7s">
+                  <div class="team-item rounded">
+                     <img class="img-fluid rounded-top" src="img/team-2.jpg" alt />
+                     <div class="team-content text-center py-3 bg-dark rounded-bottom">
+                        <h4     style="color: #897fdd" >Michael Johnson</h4>
+                        <p class="text-white mb-0">Client Relations Manager</p>
+                     </div>
+                     <div class="team-icon d-flex flex-column justify-content-center m-4">
+                        <a class="share btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fas fa-share-alt"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-facebook-f"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-twitter"></i></a>
+                        <a class="share-link btn btn-primary btn-md-square rounded-circle mb-2" href style="background-color: #897fdd"><i class="fab fa-linkedin"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Team End -->
+      <!-- Testimonial Start -->
+      <div class="container-fluid py-6">
+         <div class="container">
+            <div class="text-center" data-wow-delay="0.1s">
+               <small class="d-inline-block fw-bold text-dark text-uppercase bg-opacity-10 rounded-pill px-4 py-1 mb-4"
+                  style="border: 1px solid #897fdd; background-color: rgba(137, 127, 221, 0.1);">
+               Testimonial
+               </small>
+               <h3 class="display-6 mb-5" style="font-size: 35px;">
+                  What Our <span style="color: #897fdd;">Customers</span> Say!
+               </h3>
+            </div>
+            <div class="owl-carousel owl-theme testimonial-carousel testimonial-carousel-1 mb-4" data-wow-delay="0.1s">
+               <!-- Testimonial 1 -->
+               <div class="item">
+                  <div class="testimonial-item">
+                     <div class="d-flex mb-3 testimonial-header">
+                        <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle flex-shrink-0" alt="customer" />
+                        <div class="testimonial-quote">
+                           <i class="fa fa-quote-right fa-2x"></i>
+                        </div>
+                        <div class="ps-3 my-auto">
+                           <h4 class="mb-0">Sarah Thompson</h4>
+                           <p class="m-0">Financial Advisor</p>
+                        </div>
+                     </div>
+                     <div class="testimonial-content">
+                        <div class="testimonial-stars mb-2">
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fs-5 m-0 pt-3">
+                           InsurancePro made getting health insurance simple and stress-free. I’m so glad I found them!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Testimonial 2 -->
+               <div class="item">
+                  <div class="testimonial-item">
+                     <div class="d-flex mb-3 testimonial-header">
+                        <img src="img/testimonial-2.jpg" class="img-fluid rounded-circle flex-shrink-0" alt="customer" />
+                        <div class="testimonial-quote">
+                           <i class="fa fa-quote-right fa-2x"></i>
+                        </div>
+                        <div class="ps-3 my-auto">
+                           <h4 class="mb-0">David Patel</h4>
+                           <p class="m-0">Business Owner</p>
+                        </div>
+                     </div>
+                     <div class="testimonial-content">
+                        <div class="testimonial-stars mb-2">
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fs-5 m-0 pt-3">
+                           The customer service is outstanding. Claims are processed quickly and hassle-free.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Testimonial 3 -->
+               <div class="item">
+                  <div class="testimonial-item">
+                     <div class="d-flex mb-3 testimonial-header">
+                        <img src="img/testimonial-3.jpg" class="img-fluid rounded-circle flex-shrink-0" alt="customer" />
+                        <div class="testimonial-quote">
+                           <i class="fa fa-quote-right fa-2x"></i>
+                        </div>
+                        <div class="ps-3 my-auto">
+                           <h4 class="mb-0">Emily Nguyen</h4>
+                           <p class="m-0">Software Engineer</p>
+                        </div>
+                     </div>
+                     <div class="testimonial-content">
+                        <div class="testimonial-stars mb-2">
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fs-5 m-0 pt-3">
+                           Clear policies, great pricing, and a team that actually cares. Highly recommend!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Testimonial 4 -->
+               <div class="item">
+                  <div class="testimonial-item">
+                     <div class="d-flex mb-3 testimonial-header">
+                        <img src="img/testimonial-4.jpg" class="img-fluid rounded-circle flex-shrink-0" alt="customer" />
+                        <div class="testimonial-quote">
+                           <i class="fa fa-quote-right fa-2x"></i>
+                        </div>
+                        <div class="ps-3 my-auto">
+                           <h4 class="mb-0">Michael Lee</h4>
+                           <p class="m-0">Real Estate Agent</p>
+                        </div>
+                     </div>
+                     <div class="testimonial-content">
+                        <div class="testimonial-stars mb-2">
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                           <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="fs-5 m-0 pt-3">
+                           I’ve used several insurance providers before, but none matched the reliability of InsurancePro.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Testimonial End -->
+      <!-- Footer Start -->
+      <div class="container-fluid  py-5 " style="background-color: #f8fafc;">
+         <div class="container">
+            <div class="row g-4 justify-content-between">
+               <div class="col-lg-3 col-md-6">
+                  <h1 class="text-primary mb-4">
+                     <img src="img/logo.png" alt="Tricity Insurance Logo" style="height: 70px; width: auto; margin-right: 10px;">
+                  </h1>
+                  <p class="lh-lg mb-4">
+                     Tricity Insurance provides comprehensive insurance solutions tailored to your needs. Protect what matters most with our reliable services.
+                  </p>
+                  <div class="d-flex">
+                     <a class="btn text-white btn-sm rounded-circle me-2" href="home" style="background-color: #897fdd"><i class="fas fa-home"></i></a>
+                     <a class="btn text-white btn-sm rounded-circle me-2" href="about" style="background-color: #897fdd"><i class="fas fa-info-circle"></i></a>
+                     <a class="btn text-white btn-sm rounded-circle me-2" href="services" style="background-color: #897fdd"><i class="fas fa-briefcase"></i></a>
+                     <a class="btn text-white btn-sm rounded-circle me-2" href="contact" style="background-color: #897fdd"><i class="fas fa-envelope"></i></a>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="mb-4">Our Services</h4>
+                  <div class="d-flex flex-column">
+                     <a class="text-body mb-3" href="services"><i class="fa fa-check  me-2" style="color: #897fdd"></i>Home Insurance</a>
+                     <a class="text-body mb-3" href="services"><i class="fa fa-check  me-2" style="color: #897fdd"></i>Auto Insurance</a>
+                     <a class="text-body mb-3" href="services"><i class="fa fa-check  me-2" style="color: #897fdd"></i>Health Insurance</a>
+                     <a class="text-body mb-3" href="services"><i class="fa fa-check  me-2" style="color: #897fdd"></i>Business Insurance</a>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="mb-4">Contact Us</h4>
+                  <div class="d-flex flex-column">
+                     <p class="mb-2"><i class="fa fa-map-marker-alt  me-2" style="color: #897fdd"></i>123 Street, New York, USA</p>
+                     <p class="mb-2"><i class="fa fa-phone-alt  me-2" style="color: #897fdd"></i>(+012) 3456 7890 123</p>
+                     <p class="mb-2"><i class="fas fa-envelope  me-2" style="color: #897fdd"></i>info@tricityinsurance.com</p>
+                     <p class="mb-2"><i class="fa fa-clock  me-2" style="color: #897fdd"></i>24/7 Customer Support</p>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <h4 class="mb-4">Quick Links</h4>
+                  <div class="d-flex flex-column">
+                     <a class="text-body mb-3" href="home.html">Home</a>
+                     <a class="text-body mb-3" href="about.html">About</a>
+                     <a class="text-body mb-3" href="service.html">Services</a>
+                     <a class="text-body mb-3" href="event.html">Events</a>
+                     <a class="text-body mb-3" href="pages.html">Pages</a>
+                     <a class="text-body mb-3" href="contact.html">Contact</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Footer End -->
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright bg-dark py-4">
+         <div class="container">
             <div class="row">
-<section class="col-sm-7 col-md-8 col-lg-8">
-    <div class="intro">
-      <ul>
-                <h2>Welcome to Tricity Insurance</h2>
-        <p>At Tricity Insurance, we are committed to providing reliable, affordable, and comprehensive insurance solutions. Whether it's for your health, home, or vehicle, our mission is to ensure peace of mind with tailored coverage and dedicated customer support.</p>
-        
-      </ul>
-<ul class="row ">
-            <div class="col-sm-4 ">
-                <i class="fa fa-headset  " aria-hidden="true"></i>
-                <h3>24/7 Support</h3>
-                <p>Our dedicated support team is always available to assist you, anytime, anywhere.</p>
+               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                  <span class="text-light"
+                     ><a href="#" style="color: #897fdd;"
+                     ><i class="fas fa-copyright  me-2" ></i>Tricity Insurance
+                  </a
+                     >, All right reserved.</span
+                     >
+               </div>
+               <!-- <div class="col-md-6 my-auto text-center text-md-end text-white">
+                  Designed By
+                  <a class="border-bottom" href=""</a>
+                  </div> -->
             </div>
-            <div class="col-sm-4 ">
-                <i class="fa fa-file-invoice-dollar " aria-hidden="true"></i>
-                <h3>Hassle-Free Claims</h3>
-                <p>Experience a quick and transparent claim process with minimal paperwork.</p>
-            </div>
-            <div class="col-sm-4 ">
-                <i class="fa fa-shield-alt " aria-hidden="true"></i>
-                <h3>Secure Coverage</h3>
-                <p>Get started today with insurance plans that prioritize your safety and future.</p>
-            </div>
-        </ul>
-    </div>
-</section>
-
-                <section class="col-sm-5 col-md-4 col-lg-4">
-                    <div class="get-quote-form">
-                        <h2>Get a free quote form</h2>
-                        <form id="get-quote">
-                            <div>
-                                <input type="text" name="name" placeholder="Your Name" />
-                            </div>
-                            <div>
-                                <input type="text" name="email" placeholder="Email" />
-                            </div>
-                            <div>
-                                <input type="text" name="ph-no" placeholder="Phone no" />
-                            </div>
-                            
-                            <div>
-                                <textarea rows="1" cols="1" placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <input type="submit" class="btn-default" value="Get Free Quote" />
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-<section class="row align-items-center my-5">
-  <!-- Left Image -->
-  <div class="col-md-6">
-    <img src="./images/7544.jpg" alt="Insurance Services" class="img-fluid rounded ">
-  </div>
-
-  <!-- Right Content -->
-  <div class="col-md-6">
-  <h2 class="site-section-heading text-uppercase font-secondary mb-5">Why Choose Us</h2>
-  <p>At  Tricity Insurance, we prioritize your peace of mind. With personalized insurance plans, expert advisors, and responsive customer support, we’re committed to securing your health, assets, and future with trust and transparency.</p>
-
-  <p>Whether you need life, health, auto, or home insurance, our experienced team ensures a smooth and reliable experience—because protecting what matters to you is what matters most to us.</p>
-</section>
-
-
-            </div>
-        </div>
-    <!-- <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <span class="caption d-block mb-2 font-secondary font-weight-bold">Products &amp; Services</span>
-            <h2 class="site-section-heading text-uppercase text-center font-secondary">Insurance Coverage</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 block-13 nav-direction-white">
-            <div class="nonloop-block-13 owl-carousel">
-              <div class="media-image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Home Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Auto Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Travel Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Home Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Auto Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2 class="font-secondary text-uppercase">Travel Insurance</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, voluptate.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">Learn More</span></a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </div> -->
-
-    
-    <!-- <div class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12"><h2 class="text-uppercase">We Are Trusted Agency Company</h2></div>
-        </div>
-        <div class="row mb-5">
-          <div class="col-md-12">
-            <img src="images/about_1.jpg" alt="image" class="img-fluid">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 ml-auto">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid eius facilis voluptatem eligendi magnam accusamus vel commodi asperiores sint rem reprehenderit nobis nesciunt veniam qui fugit doloremque numquam quod.</p>
-          </div>
-          <div class="col-md-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora distinctio ipsam nesciunt recusandae repellendus asperiores amet.</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    
-  
-
-    
-
-<div class="py-5">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-12 text-center">
-        <span class="caption d-block mb-2 font-secondary font-weight-bold">Outstanding Services</span>
-        <h2 class="site-section-heading text-uppercase text-center font-secondary">Why Clients Choose Us</h2>
-      </div>
-    </div>
-    <div class="row border-responsive">
-      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
-        <div class="text-center">
-          <span class="flaticon-customer-service display-4 d-block mb-3 text-primary"></span>
-          <h3 class="text-uppercase h4 mb-3">24/7 Support</h3>
-          <p>Our dedicated support team is available around the clock to assist you whenever you need help or guidance with your policy or claims.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
-        <div class="text-center">
-          <span class="flaticon-group display-4 d-block mb-3 text-primary"></span>
-          <h3 class="text-uppercase h4 mb-3">Trusted Advisors</h3>
-          <p>Our experienced professionals offer honest advice and personalized solutions, earning the trust of thousands of satisfied clients.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right">
-        <div class="text-center">
-          <span class="flaticon-medal display-4 d-block mb-3 text-primary"></span>
-          <h3 class="text-uppercase h4 mb-3">12+ Years of Expertise</h3>
-          <p>We’ve been protecting lives and assets for over a decade with tailored insurance plans backed by proven industry knowledge.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-        <div class="text-center">
-          <span class="flaticon-agreement display-4 d-block mb-3 text-primary"></span>
-          <h3 class="text-uppercase h4 mb-3">Join Our Community</h3>
-          <p>Become part of a growing family that values security, reliability, and peace of mind. Let us protect what matters most to you.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <div class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <p class="mb-5"><img src="images/img_1.jpg" alt="Image" class="img-fluid"></p>
-          </div>
-         <div class="col-lg-5 ml-auto">
-  <h2 class="site-section-heading mb-3 font-secondary text-uppercase">
-    Protect Your Home Before It's Too Late
-  </h2>
-  <p class="mb-5">
-    Every year, thousands of homes suffer damage from unexpected disasters—leaving families unprepared and financially strained. Safeguard your future with comprehensive home insurance designed to protect what matters most.
-  </p>
-  <p>
-    <a href="#" class="btn btn-outline-primary py-2 px-4">Get Insured Today</a>
-  </p>
-</div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="" style="background-image: url('images/topography.png'); background-attachment: fixed">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12">
-            <h2 class="site-section-heading text-center text-uppercase">Our Founders</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6 text-center">
-            <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-            <h2 class="h5 ">Alex Peters</h2>
-            <span class="d-block mb-4">CEO, Co-Founder</span>
-            <p class="font-weig mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita et aliquam fuga dicta amet ad laborum error recusandae, voluptatibus quam minima sed, saepe odio voluptatem. Sed unde hic, vitae fugiat.</p>
-          </div>
-          <div class="col-md-6 text-center">
-            <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-25 mb-4">
-            <h2 class="h5">Shane Cripton</h2>
-            <span class="d-block mb-4">President, Co-Founder</span> 
-            <p class="font-weig mb-5 lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita et aliquam fuga dicta amet ad laborum error recusandae, voluptatibus quam minima sed, saepe odio voluptatem. Sed unde hic, vitae fugiat.</p>
-          </div>
-        </div>
-      </div>  
-    </div>
-    
-    
-
-    <div class=" p-4 block-14 bg-light nav-direction-white">
-    <!-- Testimonial Start -->
-<div class="testimonial-section  bg-light">
-  <div class="container ">
-          <div class="col-md-12">
-            <h2 class="site-section-heading text-center text-uppercase mb-4">Tesimonials</h2>
-          </div>
-    
-    <div class="testimonial-cards ">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Testimonial Card 1 -->
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-4">
-                <img src="images/testimonial-1.jpg" class="rounded-circle me-3" width="60" alt="Client">
-                <div class="ml-3">
-                  <h5 class="mb-0">Sarah Johnson</h5>
-                  <small class="text-muted">Homeowner</small>
-                </div>
-              </div>
-              <div class="rating mb-3 text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="card-text">"After the storm damage last year, their team handled everything seamlessly. The claim process was straightforward and they were with me every step of the way."</p>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <small class="text-muted">Posted 2 weeks ago</small>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial Card 2 -->
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-4">
-                <img src="images/testimonial-2.jpg" class="rounded-circle me-3" width="60" alt="Client">
-                <div class="ml-3">
-                  <h5 class="mb-0">Michael Chen</h5>
-                  <small class="text-muted">Business Owner</small>
-                </div>
-              </div>
-              <div class="rating mb-3 text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-              <p class="card-text">"The commercial policy they designed for my restaurant saved me thousands while providing better coverage than my previous insurer. Highly recommend for small businesses."</p>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <small class="text-muted">Posted 1 month ago</small>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial Card 3 -->
-        <div class="col">
-          <div class="card h-100 border-0 shadow-sm hover-shadow transition">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-4">
-                <img src="images/testimonial-3.jpg" class="rounded-circle me-3" width="60" alt="Client">
-                <div class="ml-3">
-                  <h5 class="mb-0">David & Emily Wilson</h5>
-                  <small class="text-muted">Family Plan</small>
-                </div>
-              </div>
-              <div class="rating mb-3 text-warning">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="card-text">"Bundling our auto and home insurance was the best financial decision we made this year. The savings were substantial and the service has been exceptional."</p>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-              <small class="text-muted">Posted 3 months ago</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="text-center mt-5">
-      <div class="trust-badges mt-4">
-        <span class="badge bg-white text-dark me-2 p-2 shadow-sm">
-          <i class="fas fa-shield-alt text-primary me-1"></i> Trusted by 10,000+ clients
-        </span>
-        <span class="badge bg-white text-dark p-2 shadow-sm">
-          <i class="fas fa-award text-primary me-1"></i> 5-Star Rated Service
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-    <!-- Testimonial End -->
-    </div>
-
-    <div class="py-5 bg-primary">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-            <h2 class="text-uppercase text-white mb-0">Small Business Insurance Company</h2>
-          </div>
-          <div class="col-md-3 ml-auto text-center text-md-left">
-            <a href="#" class="btn btn-bg-primary d-inline-block d-md-block font-secondary text-uppercase">Contact Us</a> 
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer class="site-footer">
-      <div class="container">
-        
-
-        <div class="row">
-          <div class="col-md-4">
-            <h3 class="footer-heading mb-4 text-white">About</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quos rem ullam, placeat amet.</p>
-            <p><a href="#" class="btn btn-primary rounded text-white px-4">Read More</a></p>
-          </div>
-          <div class="col-md-5 ml-auto">
-            <div class="row">
-              <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Quick Menu</h3>
-                  <ul class="list-unstyled">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Insurance</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Privacy</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-6">
-                <h3 class="footer-heading mb-4 text-white">Insurance</h3>
-                  <ul class="list-unstyled">
-                    <li><a href="#">Home Insurance</a></li>
-                    <li><a href="#">Auto Insurance</a></li>
-                    <li><a href="#">Travel Insurance</a></li>
-                    <li><a href="#">Business Insurance</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-md-2">
-            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
-              <div class="col-md-12">
-                <p>
-                  <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
-                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
-                  <a href="#" class="p-2"><span class="icon-instagram"></span></a>
-                  <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
-
-                </p>
-              </div>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved </a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
-  </div>
-
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
-
-  <script src="js/main.js"></script>
-
-  </body>
+      <!-- Copyright End -->
+      <!-- Back to Top -->
+      <a
+         href="#"
+         class="btn btn-md-square text-white rounded-circle back-to-top"
+         style="background-color: #897fdd; outline: none; box-shadow: none"
+         ><i class="fa fa-arrow-up"></i
+         ></a>
+      <!-- JavaScript Libraries -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="lib/wow/wow.min.js"></script>
+      <script src="lib/easing/easing.min.js"></script>
+      <script src="lib/waypoints/waypoints.min.js"></script>
+      <script src="lib/counterup/counterup.min.js"></script>
+      <script src="lib/lightbox/js/lightbox.min.js"></script>
+      <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+      <!-- Template Javascript -->
+      <script src="js/main.js"></script>
+   </body>
 </html>
