@@ -114,9 +114,9 @@
   const imageElement = document.getElementById("changingImage");
 
   const images = [
-    "img/Man Representing Auto Insurance Coverage Illustration with Car and Policy-HD (1).webp",
-    "img/Vector Illustration of a Woman 2D Flat Design Reviewing Auto Insurance Policy-HD.webp",
-    "img/Flat 2D Illustration of a Woman Understanding Insurance Features-HD.webp",
+    "img/Insurance-bro.svg",
+    "img/Insurance-pana.svg",
+    "img/Insurance-amico.svg",
   ];
 
   let index = 0;
