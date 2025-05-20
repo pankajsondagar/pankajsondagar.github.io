@@ -1,0 +1,327 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Service Details - Tricity Insurance</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar start -->
+    <div class="container-fluid nav-bar" style="background-color: #fff">
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/logo.jpg" alt="Tricity Insurance Logo" style="height: 60px; width: auto; margin-right: 10px;">
+                </a>
+                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link active">Services</a>
+                        <a href="event.html" class="nav-item nav-link">Events</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu bg-white">
+                                <a href="book.html" class="dropdown-item">Booking</a>
+                                <a href="blog.html" class="dropdown-item">Our Blog</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <button class="btn-search btn text-white btn-md-square me-4 rounded-circle d-none d-lg-inline-flex" style="background-color: #3A59D1; outline: none; box-shadow: none" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href class="btn text-white py-2 px-4 d-none d-xl-inline-block rounded-pill" style="background-color: #3A59D1; outline: none; box-shadow: none">Book Now</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Modal Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                    <button type="button" class="btn-close" style="outline: none; box-shadow: none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="input-group w-75 mx-auto d-flex">
+                        <input type="search" class="form-control bg-transparent p-3" style="outline: none; box-shadow: none; border: 1px solid #3A59D1;" placeholder="keywords" aria-describedby="search-icon-1"/>
+                        <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Search End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-start py-5">
+            <h1 class="display-2 text-white mb-4 animated slideInDown" id="service-title">Service Details</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-start mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="service.html">Services</a></li>
+                    <li class="breadcrumb-item text-white" aria-current="page" id="service-breadcrumb">Details</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Service Details Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <img id="service-image" class="img-fluid rounded" src="" alt="">
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <h2 id="service-heading" class="mb-4"></h2>
+                    <p id="service-description" class="mb-4"></p>
+                    <ul id="service-features" class="list-unstyled mb-4">
+                        <li><i class="fas fa-check text-primary me-2"></i>Feature 1</li>
+                        <li><i class="fas fa-check text-primary me-2"></i>Feature 2</li>
+                        <li><i class="fas fa-check text-primary me-2"></i>Feature 3</li>
+                    </ul>
+                    <a href="book.html" class="btn text-white py-2 px-4 rounded-pill" style="background-color: #3A59D1;">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service Details End -->
+
+    <!-- Footer Start -->
+    <div class="p-4 mt-4 text-primary" style="background-color: #f8fafc;">
+        <footer class="container">
+            <div class="row g-4">
+                <div class="col-6 col-sm-6 col-md-3">
+                    <h5 class="mb-4 text-primary">Quick Links</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="index.html" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> About Us</a></li>
+                        <li class="mb-2"><a href="service.html" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Service</a></li>
+                        <li class="mb-2"><a href="event.html" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Events</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-6 col-md-3">
+                    <h5 class="mb-4 text-primary">Services</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2"><a href="service-details.html?service=home" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Home Insurance</a></li>
+                        <li class="mb-2"><a href="service-details.html?service=auto" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Auto Insurance</a></li>
+                        <li class="mb-2"><a href="service-details.html?service=health" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Health Insurance</a></li>
+                        <li class="mb-2"><a href="service-details.html?service=life" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Life Insurance</a></li>
+                        <li class="mb-2"><a href="service-details.html?service=travel" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Travel Insurance</a></li>
+                        <li class="mb-2"><a href="service-details.html?service=business" class="text-primary text-decoration-none link-hover d-flex align-items-center"><i class="fas fa-angle-right me-2 text-primary"></i> Business Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5 class="mb-4 text-primary">Contact Us</h5>
+                    <address class="small text-primary mb-0">
+                        <p class="d-flex align-items-start"><i class="fas fa-map-marker-alt me-3 text-primary mt-1"></i><span>1234 Insurance St., Suite 100<br>Springfield, IL 62704</span></p>
+                        <p class="d-flex align-items-center"><i class="fas fa-phone-alt me-3 text-primary"></i><a href="tel:+18005551234" class="text-primary text-decoration-none link-hover">+1 (800) 555-1234</a></p>
+                        <p class="d-flex align-items-center"><i class="fas fa-envelope me-3 text-primary"></i><a href="mailto:support@insurance.com" class="text-primary text-decoration-none link-hover">support@insurance.com</a></p>
+                        <p class="d-flex align-items-center"><i class="fas fa-clock me-3 text-primary"></i>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <h5 class="mb-4 text-primary">Newsletter</h5>
+                    <p class="small text-primary">Subscribe to get our latest news and offers.</p>
+                    <div class="position-relative w-100" style="max-width: 500px; margin: auto;">
+                        <input class="form-control w-100 p-3 rounded-pill pe-5" type="text" placeholder="Your email" style="padding-right: 130px; outline: none; box-shadow: none; border: 1px solid #ccc;">
+                        <button type="button" class="btn rounded-pill text-white position-absolute top-50 translate-middle-y end-0 me-2" style="background-color: #1645aa; padding: 10px 25px; font-weight: 500; outline: none; box-shadow: none; border: none;">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small text-primary">© 2025 Tricity Insurance. All rights reserved.</div>
+        </footer>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-md-square text-white rounded-circle back-to-top" style="background-color: #3A59D1; outline: none; box-shadow: none"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <!-- Service Details Script -->
+    <script>
+        const serviceData = {
+            life: {
+                title: "Life Insurance",
+                description: "Our Life Insurance plans provide financial security for your loved ones in the event of your passing. Choose from term life, whole life, or universal life policies tailored to your needs.",
+                features: [
+                    "Flexible coverage options",
+                    "Affordable premiums",
+                    "Tax-free death benefits"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/db5cc2a4-f302-48be-0856-da7a45f2dc77.jpg",
+                alt: "Happy family with parents and child reading a book together in cozy home environment"
+            },
+            fire: {
+                title: "Fire Insurance",
+                description: "Protect your property from fire-related damages with our comprehensive Fire Insurance. Covers structural damage, contents, and additional living expenses.",
+                features: [
+                    "Coverage for fire and smoke damage",
+                    "Reimbursement for temporary housing",
+                    "Fast claim processing"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/4c73905a-cd42-47c2-cff5-6484b0666960.jpg",
+                alt: "Group of happy people hugging and smiling in casual clothes with yellow background"
+            },
+            health: {
+                title: "Health Insurance",
+                description: "Our Health Insurance plans offer coverage for medical expenses, hospital stays, and preventive care to keep you and your family healthy.",
+                features: [
+                    "Wide network of hospitals",
+                    "Coverage for pre-existing conditions",
+                    "Annual health check-ups"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/4c73905a-cd42-47c2-cff5-6484b0666960.jpg",
+                alt: "Group of happy people hugging and smiling in casual clothes with yellow background"
+            },
+            home: {
+                title: "Home Insurance",
+                description: "Safeguard your home and belongings with our Home Insurance, covering damages from natural disasters, theft, and more.",
+                features: [
+                    "Protection for home structure and contents",
+                    "Liability coverage",
+                    "Optional add-ons for floods and earthquakes"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/840deafd-eece-4f22-bea1-60f8b3b08199.jpg",
+                alt: "Happy family with parents and children holding cardboard roof over their heads"
+            },
+            travel: {
+                title: "Travel Insurance",
+                description: "Travel worry-free with our Travel Insurance, covering trip cancellations, medical emergencies, and lost luggage.",
+                features: [
+                    "24/7 emergency assistance",
+                    "Coverage for trip interruptions",
+                    "Protection for lost or delayed baggage"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/840deafd-eece-4f22-bea1-60f8b3b08199.jpg",
+                alt: "Happy family with parents and children holding cardboard roof over their heads"
+            },
+            business: {
+                title: "Business Insurance",
+                description: "Protect your business with our customizable Business Insurance plans, covering property, liability, and employee-related risks.",
+                features: [
+                    "General liability coverage",
+                    "Property and equipment protection",
+                    "Business interruption insurance"
+                ],
+                image: "https://storage.googleapis.com/a1aa/image/840deafd-eece-4f22-bea1-60f8b3b08199.jpg",
+                alt: "Happy family with parents and children holding cardboard roof over their heads"
+            }
+        };
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+            const data = serviceData[service] || {
+                title: "Service Not Found",
+                description: "The requested service details are not available.",
+                features: [],
+                image: "",
+                alt: ""
+            };
+
+            document.getElementById('service-title').textContent = data.title;
+            document.getElementById('service-breadcrumb').textContent = data.title;
+            document.getElementById('service-heading').textContent = data.title;
+            document.getElementById('service-description').textContent = data.description;
+            document.getElementById('service-image').src = data.image;
+            document.getElementById('service-image').alt = data.alt;
+
+            const featuresList = document.getElementById('service-features');
+            featuresList.innerHTML = "";
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check text-primary me-2"></i>${feature}`;
+                featuresList.appendChild(li);
+            });
+        };
+    </script>
+</body>
+</html>

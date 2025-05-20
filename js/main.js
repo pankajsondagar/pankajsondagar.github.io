@@ -9,42 +9,42 @@
             }
         }, 1);
     };
-    spinner(0);
+    spinner();
     
     
     // Initiate the wowjs
     new WOW().init();
+
+
+    // Fixed Navbar
+    $(window).scroll(function () {
+        if ($(window).width() < 992) {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-white shadow');
+            } else {
+                $('.fixed-top').removeClass('bg-white shadow');
+            }
+        } else {
+            if ($(this).scrollTop() > 45) {
+                $('.fixed-top').addClass('bg-white shadow').css('top', -45);
+            } else {
+                $('.fixed-top').removeClass('bg-white shadow').css('top', 0);
+            }
+        }
+    });
     
     
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
-    });
-
-
-    // Modal Video
-    $(document).ready(function () {
-        var $videoSrc;
-        $('.btn-play').click(function () {
-            $videoSrc = $(this).data("src");
-        });
-        console.log($videoSrc);
-
-        $('#videoModal').on('shown.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-        })
-
-        $('#videoModal').on('hide.bs.modal', function (e) {
-            $("#video").attr('src', $videoSrc);
-        })
     });
 
 
@@ -55,82 +55,133 @@
     });
 
 
-    // Testimonial carousel
-    $(".testimonial-carousel-1").owlCarousel({
-        loop: true,
-        dots: false,
-        margin: 25,
+    // Project carousel
+    $(".project-carousel").owlCarousel({
         autoplay: true,
-        slideTransition: 'linear',
-        autoplayTimeout: 0,
-        autoplaySpeed: 10000,
-        autoplayHoverPause: false,
+        smartSpeed: 1000,
+        margin: 25,
+        loop: true,
+        center: true,
+        dots: false,
+        nav: true,
+        navText : [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ],
         responsive: {
-            0:{
+			0:{
                 items:1
             },
-            575:{
+            576:{
                 items:1
             },
-            767:{
+            768:{
                 items:2
             },
-            991:{
+            992:{
                 items:3
             }
         }
     });
 
-    $(".testimonial-carousel-2").owlCarousel({
-        loop: true,
-        dots: false,
-        rtl: true,
-        margin: 25,
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
         autoplay: true,
-        slideTransition: 'linear',
-        autoplayTimeout: 0,
-        autoplaySpeed: 10000,
-        autoplayHoverPause: false,
+        smartSpeed: 1000,
+        center: true,
+        margin: 24,
+        dots: true,
+        loop: true,
+        nav : false,
         responsive: {
             0:{
                 items:1
             },
-            575:{
+			576:{
                 items:1
             },
-            767:{
+            768:{
                 items:2
             },
-            991:{
+            992:{
                 items:3
             }
         }
     });
 
+    
 })(jQuery);
 
-// hero section
 
-  const imageElement = document.getElementById("changingImage");
+// HERO IMAGE ANIMATION - #changingImage
+const changingImageElement = document.getElementById("changingImage");
 
-  const images = [
+if (changingImageElement) {
+  const images1 = [
     "img/Insurance-bro.svg",
     "img/Insurance-pana.svg",
     "img/Insurance-amico.svg",
   ];
-
-  let index = 0;
+  let index1 = 0;
 
   setInterval(() => {
-    // Fade out
-    imageElement.classList.add("fade-out");
-
-    // Wait for fade out to finish before changing image
+    changingImageElement.classList.add("fade-out");
     setTimeout(() => {
-      index = (index + 1) % images.length;
-      imageElement.src = images[index];
-
-      // Fade back in
-      imageElement.classList.remove("fade-out");
-    }, 1000); // match this to transition duration in CSS
+      index1 = (index1 + 1) % images1.length;
+      changingImageElement.src = images1[index1];
+      changingImageElement.classList.remove("fade-out");
+    }, 1000);
   }, 4000);
+}
+
+// SECOND IMAGE ANIMATION - #rotatingImage
+const rotatingImageElement = document.getElementById("rotatingImage");
+
+if (rotatingImageElement) {
+  const images2 = [
+    "img/Insurance-bro.svg",
+    "img/Insurance-pana.svg",
+    "img/Insurance-amico.svg",
+  ];
+  let index2 = 0;
+
+  setInterval(() => {
+    rotatingImageElement.classList.add("fade-out");
+    setTimeout(() => {
+      index2 = (index2 + 1) % images2.length;
+      rotatingImageElement.src = images2[index2];
+      rotatingImageElement.classList.remove("fade-out");
+    }, 1000);
+  }, 4000);
+}
+
+
+    // Apply margin-top on mobile only
+    if (window.innerWidth <= 768) {
+        document.getElementById("aboutUsBadge").style.marginTop = "1rem";
+      }
+
+    // Get the paragraph element
+    const insuranceText = document.getElementById('insurance-text');
+
+    // Get full text content
+    const fullText = insuranceText.textContent;
+  
+    // Split into words
+    const words = fullText.trim().split(/\s+/);
+  
+    // Limit to 20 words
+    const maxWords = 8;
+  
+    // Select all elements with class 'insurance-text'
+    const elements = document.querySelectorAll('.insurance-text');
+  
+    elements.forEach(el => {
+      const fullText = el.textContent.trim();
+      const words = fullText.split(/\s+/);
+  
+      if(words.length > maxWords) {
+        el.textContent = words.slice(0, maxWords).join(' ') + '...';
+      }
+    });
